@@ -12,6 +12,7 @@ let Video = {
 
 		socket.connect()
 		let vidChannel = socket.channel("videos:" + videoId)
+		vidChannel.on("ping", ({count}) => console.log("PING", count))
 
 		vidChannel.join()
 			.receive("ok", resp => console.log("joined the video channel", resp) )
