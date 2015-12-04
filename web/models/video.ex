@@ -28,7 +28,7 @@ defmodule Rumbl.Video do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> slugify_title()
-    |> assoc_constraint(:category_id)
+    |> assoc_constraint(:category)
   end
 
   defp slugify_title(changeset) do
