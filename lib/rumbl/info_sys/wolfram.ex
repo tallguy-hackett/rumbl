@@ -10,7 +10,7 @@ defmodule Rumbl.InfoSys.Wolfram do
   def fetch(query_str, query_ref, owner, _limit) do
     query_str
     |> fetch_xml()
-    |> xpath(~x"/queryresult/pod[contains(@title, 'Definitions')]/subpod/plaintext/text()")
+    |> xpath(~x"/queryresult/pod[2]/subpod/plaintext/text()")
     |> send_results(query_ref, owner)
   end
 
